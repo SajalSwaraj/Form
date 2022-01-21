@@ -19,10 +19,13 @@ namespace Test
             string Fname= FnameTextBox.Text;
             string Lname= LnameTextBox.Text;
 
-
-                FetchDetails f = new FetchDetails();
-                f.GetData(Fname, Lname);
-                HttpContext.Current.Response.Write("Success");
+            //Calling of Method
+            FetchDetails f = new FetchDetails();
+            f.GetData(Fname, Lname);
+            //Setting the input parameters to empty
+            FnameTextBox.Text = "";
+            LnameTextBox.Text = "";
+            HttpContext.Current.Response.Write("Success");
 
         }
     }

@@ -30,6 +30,7 @@ namespace Test
             string JsonResult = JsonConvert.SerializeObject(item);
             string path = ConfigurationManager.AppSettings["filepath"].ToString();
 
+            //Checking if File exists, if exists it wll delete it and create a new file and update the details.
             if (File.Exists(path))
             {
                 File.Delete(path);  
@@ -40,6 +41,7 @@ namespace Test
                 }
 
             }
+            //If file don't exists, it will create the file.
             else if(!File.Exists(path))
             {
                 using (var tw = new StreamWriter(path, true))
